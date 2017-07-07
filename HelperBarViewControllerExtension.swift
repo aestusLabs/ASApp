@@ -127,43 +127,7 @@ extension UIViewController: MicroInteractions {
 
 
 
-struct SuggestionItemsForVC {
-    private var contentSuggestions: [String] = ["Olainfnkjsdn dsdsklj laksj a kjhas Olainfnkjsdn dsdsklj laksj a kjhas", "joaijskljas lkjaskl", "Olainfnkjsdn dsdsklj laksj a kjhas Olainfnkjsdn dsdsklj laksj a kjhas"]
-    private var contentNavigations: [String] =  ["Home", "Selection", "Settings"]
-    
-    func getSuggestionsFor(currentVC: UIViewController) -> (suggestions: [String], navigation: [String]) {
-        print(currentVC)
-        if currentVC is ContentViewController {
-            return (contentSuggestions, contentNavigations)
-        } else if currentVC is OnboardIntroduceHelperViewController {
-                return (["Mute all sound", "Switch to dark mode"], ["Go to next step"])
-        } else if currentVC is OnboardGetNameViewController{
-                return (["Why do I need your name?"], [])
-        } else if currentVC is OnboardCloudSyncViewController {
-                return (["Learn my privacy policy", "Learn what is synced"], [])
-        } else if currentVC is OnboardHealthWarningViewController {
-            return (["I've got nothing for you"], [])
-        } else if currentVC is SelectionViewController {
-            return (["Change order of items", "Use guided search for help finding what you want "], ["Home", "Settings"])
-        } else if currentVC is HomeViewController {
-            print("LKadsl")
-            return (["Hide cards you don't want", "Change temperature unit", "Set up an always on card that links exactly where you want"], ["Selection", "Settings"])
-        }  else if currentVC is SettingsViewController {
-            return ([ "Switch to dark mode"], ["Home", "Selection"])
-        }  else  {
-            return (["noVC", "noVC"], ["noVC", "noVC"])
-        }
 
-    }
-    
-    func getContentSuggestions() -> ([String], [String]){
-        return (contentSuggestions, contentNavigations)
-    }
-    
-    // maybe put the if statement here/ Pass the currentVC to this and return the corrent arrays
-    
-}
-var suggestionItems = SuggestionItemsForVC()
 
 extension UIWindow {
     
